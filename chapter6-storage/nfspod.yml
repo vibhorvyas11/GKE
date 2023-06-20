@@ -1,0 +1,19 @@
+apiVersion: v1 
+kind: Pod 
+
+metadata:
+  name: pod3
+
+
+spec:
+  containers:
+    - name: cont1
+      image: nginx 
+      volumeMounts:
+        - name: vol1
+          mountPath: /vishal
+  volumes:
+    - name: vol1
+      nfs:
+        server: <ipofnfsserver>
+        path: /data
